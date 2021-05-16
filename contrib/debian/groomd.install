@@ -1,0 +1,3 @@
+usr/local/bin/pivxd usr/bin
+usr/local/bin/groom-cli usr/bin
+debian/examples/groom.conf etc/groom

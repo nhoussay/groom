@@ -1,21 +1,21 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit bitcoind.service
+# $ systemctl edit pivxd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/pivx/pivx.conf
+# /etc/groom/groom.conf
 
 [Unit]
-Description=PIVX daemon
+Description=GROOM daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/pivxd -daemon -conf=/etc/pivx/pivx.conf -pid=/run/pivxd/pivxd.pid
-# Creates /run/pivxd owned by pivx
+ExecStart=/usr/bin/pivxd -daemon -datadir=/var/lib/groom -conf=/etc/groom/groom.conf -pid=/run/pivxd/pivxd.pid
+# Creates /run/pivxd owned by groom
 RuntimeDirectory=pivxd
-User=pivx
+User=groom
 Type=forking
 PIDFile=/run/pivxd/pivxd.pid
 Restart=on-failure
@@ -38,7 +38,8 @@ NoNewPrivileges=true
 PrivateDevices=true
 
 # Deny the creation of writable and executable memory mappings.
-MemoryDenyWriteExecute=true
+# Commented out as it's not supported on Debian 8 or Ubuntu 16.04 LTS
+#MemoryDenyWriteExecute=true
 
 [Install]
 WantedBy=multi-user.target
