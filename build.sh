@@ -7,4 +7,4 @@ cd ..
 CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/ --disable-online-rust
 make
 sudo bash -c "echo 1 > /proc/sys/fs/binfmt_misc/status" # Enable WSL support for Win32 applications.
-make deploy /mnt/d/projects/groom_install
+make deploy /mnt/d/projects/groom_install 
