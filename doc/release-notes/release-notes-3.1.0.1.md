@@ -7,7 +7,7 @@ Please report bugs using the issue tracker at github: <https://github.com/groom-
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or pivxd/groom-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or groomd/groom-qt (on Linux).
 
 
 Compatibility

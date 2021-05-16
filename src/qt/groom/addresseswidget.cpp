@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,7 +9,7 @@
 #include "qt/groom/tooltipmenu.h"
 
 #include "qt/groom/addnewcontactdialog.h"
-#include "qt/groom/pivxgui.h"
+#include "qt/groom/groomgui.h"
 #include "guiutil.h"
 #include "qt/groom/qtutils.h"
 #include "walletmodel.h"
@@ -61,7 +61,7 @@ public:
 };
 
 
-AddressesWidget::AddressesWidget(PIVXGUI* parent) :
+AddressesWidget::AddressesWidget(groomGUI* parent) :
     PWidget(parent),
     ui(new Ui::AddressesWidget)
 {

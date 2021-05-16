@@ -2,7 +2,7 @@
 # Copyright (c) 2017 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Class for pivxd node under test"""
+"""Class for groomd node under test"""
 
 import contextlib
 import decimal
@@ -31,7 +31,7 @@ JSONDecodeError = getattr(json, "JSONDecodeError", ValueError)
 BITCOIND_PROC_WAIT_TIMEOUT = 600
 
 class TestNode():
-    """A class for representing a pivxd node under test.
+    """A class for representing a groomd node under test.
 
     This class contains:
 
@@ -50,7 +50,7 @@ class TestNode():
         self.rpchost = rpchost
         self.rpc_timeout = timewait
         if binary is None:
-            self.binary = os.getenv("BITCOIND", "pivxd")
+            self.binary = os.getenv("BITCOIND", "groomd")
         else:
             self.binary = binary
         self.stderr = stderr
@@ -111,15 +111,15 @@ class TestNode():
         delete_cookie_file(self.datadir)
         self.process = subprocess.Popen(self.args + extra_args, stderr=stderr, *args, **kwargs)
         self.running = True
-        self.log.debug("pivxd started, waiting for RPC to come up")
+        self.log.debug("groomd started, waiting for RPC to come up")
 
     def wait_for_rpc_connection(self):
-        """Sets up an RPC connection to the pivxd process. Returns False if unable to connect."""
+        """Sets up an RPC connection to the groomd process. Returns False if unable to connect."""
         # Poll at a rate of four times per second
         poll_per_s = 4
         time.sleep(5)
         for _ in range(poll_per_s * self.rpc_timeout):
-            assert self.process.poll() is None, "pivxd exited with status %i during initialization" % self.process.returncode
+            assert self.process.poll() is None, "groomd exited with status %i during initialization" % self.process.returncode
             try:
                 rpc = get_rpc_proxy(rpc_url(self.datadir, self.index, self.rpchost),
                                     self.index,
@@ -162,7 +162,7 @@ class TestNode():
                 if "No RPC credentials" not in str(e):
                     raise
             time.sleep(1.0 / poll_per_s)
-        raise AssertionError("Unable to connect to pivxd")
+        raise AssertionError("Unable to connect to groomd")
 
     def get_wallet_rpc(self, wallet_name):
         if self.use_cli:
@@ -228,7 +228,7 @@ class TestNode():
     def node_encrypt_wallet(self, passphrase):
         """"Encrypts the wallet.
 
-        This causes pivxd to shutdown, so this method takes
+        This causes groomd to shutdown, so this method takes
         care of cleaning up resources."""
         self.encryptwallet(passphrase)
         self.wait_until_stopped()

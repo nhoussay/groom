@@ -2043,7 +2043,7 @@ https://www.transifex.com/groom-project/groom-project-translations</translation>
     </message>
 </context>
 <context>
-    <name>PIVXGUI</name>
+    <name>groomGUI</name>
     <message>
         <source>GROOM Core</source>
         <translation>GROOM Core</translation>
@@ -3870,12 +3870,12 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>Adressliste exportieren</translation>
     </message>
     <message>
-        <source>PIVX_tx_csv_export(*.csv)</source>
-        <translation>PIVX_tx_csv_export(*.csv)</translation>
+        <source>groom_tx_csv_export(*.csv)</source>
+        <translation>groom_tx_csv_export(*.csv)</translation>
     </message>
     <message>
-        <source>PIVX_addresses_csv_export(*.csv)</source>
-        <translation>PIVX_addresses_csv_export(*.csv)</translation>
+        <source>groom_addresses_csv_export(*.csv)</source>
+        <translation>groom_addresses_csv_export(*.csv)</translation>
     </message>
     <message>
         <source>Please select a folder to export the csv file first.</source>

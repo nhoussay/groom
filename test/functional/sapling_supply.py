@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020 The PIVX developers
+# Copyright (c) 2020 The groom developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import groomTestFramework
 from test_framework.util import (
     assert_equal,
 )
 from decimal import Decimal
 
-class SaplingSupplyTest(PivxTestFramework):
+class SaplingSupplyTest(groomTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 1

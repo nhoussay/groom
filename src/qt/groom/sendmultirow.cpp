@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@
 #include "qt/groom/sendmemodialog.h"
 #include "qt/groom/qtutils.h"
 
-SendMultiRow::SendMultiRow(PIVXGUI* _window, PWidget *parent) :
+SendMultiRow::SendMultiRow(groomGUI* _window, PWidget *parent) :
     PWidget(_window, parent),
     ui(new Ui::SendMultiRow),
     iconNumber(new QPushButton())

@@ -8,7 +8,7 @@
 #else
 #define UNUSED
 #endif
-static const char UNUSED *pivx_strings[] = {
+static const char UNUSED *groom_strings[] = {
 QT_TRANSLATE_NOOP("groom-core", ""
 "(1 = keep tx meta data e.g. payment request information, 2 = drop tx meta "
 "data)"),

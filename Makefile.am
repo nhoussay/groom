@@ -45,7 +45,7 @@ OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
 DIST_CONTRIB = $(top_srcdir)/contrib/groom-cli.bash-completion \
 	       $(top_srcdir)/contrib/groom-tx.bash-completion \
-	       $(top_srcdir)/contrib/pivxd.bash-completion \
+	       $(top_srcdir)/contrib/groomd.bash-completion \
            $(top_srcdir)/contrib/init \
            $(top_srcdir)/contrib/install_db4.sh
 
@@ -68,9 +68,9 @@ WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/groom.ico \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
 
-LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/pivx16.xpm \
-  $(top_srcdir)/share/pixmaps/pivx32.xpm \
-  $(top_srcdir)/share/pixmaps/pivx128.png
+LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/groom16.xpm \
+  $(top_srcdir)/share/pixmaps/groom32.xpm \
+  $(top_srcdir)/share/pixmaps/groom128.png
 
 OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/$(OSX_BACKGROUND_SVG) \
@@ -82,9 +82,9 @@ SPEND_PARAMS = $(top_srcdir)/params/sapling-spend.params
 OUTPUT_PARAMS = $(top_srcdir)/params/sapling-output.params
 
 COVERAGE_INFO = baseline.info \
-  test_pivx_filtered.info total_coverage.info \
+  test_groom_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
-  test_pivx_coverage.info test_pivx.info
+  test_groom_coverage.info test_groom.info
 
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
@@ -206,16 +206,16 @@ baseline_filtered.info: baseline.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-test_pivx.info: baseline_filtered.info
+test_groom.info: baseline_filtered.info
 	$(MAKE) -C src/ check
-	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_pivx -o $@
+	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_groom -o $@
 	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
 
-test_pivx_filtered.info: test_pivx.info
+test_groom_filtered.info: test_groom.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-functional_test.info: test_pivx_filtered.info
+functional_test.info: test_groom_filtered.info
 	-@TIMEOUT=15 test/functional/test_runner.py $(EXTENDED_FUNCTIONAL_TESTS)
 	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src --t functional-tests -o $@
 	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
@@ -224,13 +224,13 @@ functional_test_filtered.info: functional_test.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-test_pivx_coverage.info: baseline_filtered.info test_pivx_filtered.info
-	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_pivx_filtered.info -o $@
+test_groom_coverage.info: baseline_filtered.info test_groom_filtered.info
+	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_groom_filtered.info -o $@
 
-total_coverage.info: test_pivx_filtered.info functional_test_filtered.info
-	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_pivx_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
+total_coverage.info: test_groom_filtered.info functional_test_filtered.info
+	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_groom_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-test_pivx.coverage/.dirstamp:  test_pivx_coverage.info
+test_groom.coverage/.dirstamp:  test_groom_coverage.info
 	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 	@touch $@
 
@@ -238,7 +238,7 @@ total.coverage/.dirstamp: total_coverage.info
 	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 	@touch $@
 
-cov: test_pivx.coverage/.dirstamp total.coverage/.dirstamp
+cov: test_groom.coverage/.dirstamp total.coverage/.dirstamp
 
 endif
 
@@ -294,6 +294,6 @@ clean-docs:
 	rm -rf doc/doxygen
 
 clean-local: clean-docs
-	rm -rf coverage_percent.txt test_pivx.coverage/ total.coverage/ test/tmp/ cache/ $(OSX_APP)
+	rm -rf coverage_percent.txt test_groom.coverage/ total.coverage/ test/tmp/ cache/ $(OSX_APP)
 	rm -rf test/functional/__pycache__ test/functional/test_framework/__pycache__ test/cache share/rpcauth/__pycache__
 

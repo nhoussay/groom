@@ -12,12 +12,12 @@ Description=GROOM daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/pivxd -daemon -conf=/etc/groom/groom.conf -pid=/run/pivxd/pivxd.pid
-# Creates /run/pivxd owned by groom
-RuntimeDirectory=pivxd
+ExecStart=/usr/bin/groomd -daemon -conf=/etc/groom/groom.conf -pid=/run/groomd/groomd.pid
+# Creates /run/groomd owned by groom
+RuntimeDirectory=groomd
 User=groom
 Type=forking
-PIDFile=/run/pivxd/pivxd.pid
+PIDFile=/run/groomd/groomd.pid
 Restart=on-failure
 
 # Hardening measures

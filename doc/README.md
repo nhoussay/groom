@@ -14,7 +14,7 @@ The following are some helpful notes on how to run GROOM Core on your native pla
 Unpack the files into a directory and run:
 
 - `bin/groom-qt` (GUI) or
-- `bin/pivxd` (headless)
+- `bin/groomd` (headless)
 
 If this is the first time running GROOM Core (since v5.0.0), you'll need to install the sapling params by running the included `install-params.sh` script, which copies the two params files to `$HOME/.groom-params`
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,7 +22,7 @@
 #define REQUEST_PREPARE_TX 1
 #define REQUEST_REFRESH_BALANCE 2
 
-SendWidget::SendWidget(PIVXGUI* parent) :
+SendWidget::SendWidget(groomGUI* parent) :
     PWidget(parent),
     ui(new Ui::send),
     coinIcon(new QPushButton())

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The groom developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,9 +46,9 @@ QString BitcoinUnits::id(int unit)
     case PIV:
         return QString("groom");
     case mPIV:
-        return QString("mpivx");
+        return QString("mgroom");
     case uPIV:
-        return QString::fromUtf8("upivx");
+        return QString::fromUtf8("ugroom");
     default:
         return QString("???");
     }

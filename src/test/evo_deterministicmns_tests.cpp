@@ -1,9 +1,9 @@
 // Copyright (c) 2018-2021 The Dash Core developers
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "test/test_pivx.h"
+#include "test/test_groom.h"
 
 #include "evo/specialtx.h"
 #include "evo/providertx.h"

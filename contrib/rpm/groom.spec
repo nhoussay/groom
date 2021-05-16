@@ -27,13 +27,13 @@ Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 Source10:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/contrib/debian/examples/groom.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/doc/man/pivxd.1
+Source20:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/doc/man/groomd.1
 Source21:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/doc/man/groom-cli.1
 Source22:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/doc/man/groom-qt.1
 
 #selinux
 Source30:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/contrib/rpm/groom.te
-# Source31 - what about groom-tx and bench_pivx ???
+# Source31 - what about groom-tx and bench_groom ???
 Source31:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/contrib/rpm/groom.fc
 Source32:	https://raw.githubusercontent.com/groom-project/groom/v%{version}/contrib/rpm/groom.if
 
@@ -56,7 +56,7 @@ Patch0:		groom-0.12.0-libressl.patch
 %description
 Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of pivxs is carried out collectively by the network.
+issuing of grooms is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -81,7 +81,7 @@ BuildRequires:	%{_bindir}/convert
 %description core
 Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of pivxs is carried out collectively by the network.
+issuing of grooms is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
 to run a Bitcoin wallet, this is probably the package you want.
@@ -93,7 +93,7 @@ Summary:	Bitcoin shared libraries
 Group:		System Environment/Libraries
 
 %description libs
-This package provides the pivxconsensus shared libraries. These libraries
+This package provides the groomconsensus shared libraries. These libraries
 may be used by third party software to provide consensus verification
 functionality.
 
@@ -106,7 +106,7 @@ Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 This package contains the header files and static library for the
-pivxconsensus shared library. If you are developing or compiling software
+groomconsensus shared library. If you are developing or compiling software
 that wants to link against that library, then you need this package installed.
 
 Most people do not need this package installed.
@@ -143,7 +143,7 @@ groom-core daemon.
 
 The groom-cli utility allows you to communicate and control a groom daemon
 over RPC, the groom-tx utility allows you to create a custom transaction, and
-the bench_pivx utility can be used to perform some benchmarks.
+the bench_groom utility can be used to perform some benchmarks.
 
 This package contains utilities needed by the groom-server package.
 
@@ -182,12 +182,12 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/pivxd %{buildroot}%{_sbindir}/pivxd
+mv %{buildroot}%{_bindir}/groomd %{buildroot}%{_sbindir}/groomd
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
 cat <<EOF > %{buildroot}%{_tmpfilesdir}/groom.conf
-d /run/pivxd 0750 groom groom -
+d /run/groomd 0750 groom groom -
 EOF
 touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/groom.conf
 
@@ -202,7 +202,7 @@ OPTIONS=""
 # Don't change these unless you know what you're doing.
 CONFIG_FILE="%{_sysconfdir}/groom/groom.conf"
 DATA_DIR="%{_localstatedir}/lib/groom"
-PID_FILE="/run/pivxd/pivxd.pid"
+PID_FILE="/run/groomd/groomd.pid"
 EOF
 touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/groom
 
@@ -214,7 +214,7 @@ After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/pivxd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+ExecStart=%{_sbindir}/groomd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
 EnvironmentFile=%{_sysconfdir}/sysconfig/groom
 User=groom
 Group=groom
@@ -247,16 +247,16 @@ install -D -p share/pixmaps/groom.ico %{buildroot}%{_datadir}/pixmaps/groom.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/groom.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/pivx16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/pivx32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/pivx64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/pivx128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/pivx256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/pivx256.png %{buildroot}%{_datadir}/pixmaps/pivx16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/pivx256.png %{buildroot}%{_datadir}/pixmaps/pivx32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/pivx256.png %{buildroot}%{_datadir}/pixmaps/pivx64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/pivx256.png %{buildroot}%{_datadir}/pixmaps/pivx128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/pivx256.png %{buildroot}%{_datadir}/pixmaps/pivx256.xpm
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/groom16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/groom32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/groom64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/groom128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/groom256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/groom256.png %{buildroot}%{_datadir}/pixmaps/groom16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/groom256.png %{buildroot}%{_datadir}/pixmaps/groom32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/groom256.png %{buildroot}%{_datadir}/pixmaps/groom64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/groom256.png %{buildroot}%{_datadir}/pixmaps/groom128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/groom256.png %{buildroot}%{_datadir}/pixmaps/groom256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
@@ -272,7 +272,7 @@ Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
 Exec=groom-qt %u
 Terminal=false
 Type=Application
-Icon=pivx128
+Icon=groom128
 MimeType=x-scheme-handler/groom;
 Categories=Office;Finance;
 EOF
@@ -300,7 +300,7 @@ touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/groom-core.pro
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/pivxd.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/groomd.1
 install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/groom-cli.1
 %if %{_buildqt}
 install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/groom-qt.1
@@ -332,12 +332,12 @@ if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
 	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/groom.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t pivx_port_t -p tcp 8332
-%{_sbindir}/semanage port -a -t pivx_port_t -p tcp 8333
-%{_sbindir}/semanage port -a -t pivx_port_t -p tcp 18332
-%{_sbindir}/semanage port -a -t pivx_port_t -p tcp 18333
-%{_sbindir}/semanage port -a -t pivx_port_t -p tcp 18443
-%{_sbindir}/semanage port -a -t pivx_port_t -p tcp 18444
+%{_sbindir}/semanage port -a -t groom_port_t -p tcp 8332
+%{_sbindir}/semanage port -a -t groom_port_t -p tcp 8333
+%{_sbindir}/semanage port -a -t groom_port_t -p tcp 18332
+%{_sbindir}/semanage port -a -t groom_port_t -p tcp 18333
+%{_sbindir}/semanage port -a -t groom_port_t -p tcp 18443
+%{_sbindir}/semanage port -a -t groom_port_t -p tcp 18444
 %{_sbindir}/fixfiles -R groom-server restore &> /dev/null || :
 %{_sbindir}/restorecon -R %{_localstatedir}/lib/groom || :
 fi
@@ -407,14 +407,14 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
 %doc COPYING groom.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/pivxd
+%attr(0755,root,root) %{_sbindir}/groomd
 %attr(0644,root,root) %{_tmpfilesdir}/groom.conf
 %attr(0644,root,root) %{_unitdir}/groom.service
 %dir %attr(0750,groom,groom) %{_sysconfdir}/groom
 %dir %attr(0750,groom,groom) %{_localstatedir}/lib/groom
 %config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/groom
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/pivxd.1*
+%attr(0644,root,root) %{_mandir}/man1/groomd.1*
 
 %files utils
 %defattr(-,root,root,-)
@@ -422,7 +422,7 @@ rm -rf %{buildroot}
 %doc COPYING groom.conf.example doc/README.md
 %attr(0755,root,root) %{_bindir}/groom-cli
 %attr(0755,root,root) %{_bindir}/groom-tx
-%attr(0755,root,root) %{_bindir}/bench_pivx
+%attr(0755,root,root) %{_bindir}/bench_groom
 %attr(0644,root,root) %{_mandir}/man1/groom-cli.1*
 
 

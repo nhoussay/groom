@@ -2,8 +2,8 @@
 // Copyright (c) 2021 The GROOM Core developers
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_PROVIDERTX_H
-#define PIVX_PROVIDERTX_H
+#ifndef groom_PROVIDERTX_H
+#define groom_PROVIDERTX_H
 
 #include "primitives/transaction.h"
 #include "consensus/validation.h"
@@ -70,4 +70,4 @@ public:
 
 bool CheckProRegTx(const CTransaction& tx, const CBlockIndex* pindexPrev, CValidationState& state);
 
-#endif  //PIVX_PROVIDERTX_H
+#endif  //groom_PROVIDERTX_H

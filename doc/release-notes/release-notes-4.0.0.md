@@ -21,7 +21,7 @@ Masternodes will need to be restarted once both the masternode daemon and the co
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or pivxd/groom-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or groomd/groom-qt (on Linux).
 
 
 Compatibility
@@ -164,7 +164,7 @@ Arguments:
 1. "account"        (string, optional) The account name for the address to be linked to. if not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.
 
 Result:
-"pivxaddress"    (string) The new groom address
+"groomaddress"    (string) The new groom address
 ```
 
 `delegatestake` sends a cold staking delegation transaction:
@@ -238,7 +238,7 @@ Result:
          "reqSigs" : n,            (numeric) The required sigs
          "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'
          "addresses" : [           (json array of string)
-           "pivxaddress"        (string) groom address
+           "groomaddress"        (string) groom address
            ,...
          ]
        }

@@ -1731,7 +1731,7 @@ https://www.transifex.com/groom-project/groom-project-translations</translation>
     </message>
 </context>
 <context>
-    <name>PIVXGUI</name>
+    <name>groomGUI</name>
     <message>
         <source>GROOM Core</source>
         <translation>GROOM Core</translation>

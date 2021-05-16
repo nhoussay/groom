@@ -2508,9 +2508,9 @@ https://www.transifex.com/groom-project/groom-project-translations</source>
     </message>
 </context>
 <context>
-    <name>PIVXGUI</name>
+    <name>groomGUI</name>
     <message>
-        <location filename="../groom/pivxgui.cpp" line="+69"/>
+        <location filename="../groom/groomgui.cpp" line="+69"/>
         <location line="+301"/>
         <location line="+69"/>
         <source>GROOM Core</source>
@@ -4827,12 +4827,12 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>PIVX_tx_csv_export(*.csv)</source>
+        <source>groom_tx_csv_export(*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>PIVX_addresses_csv_export(*.csv)</source>
+        <source>groom_addresses_csv_export(*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6954,7 +6954,7 @@ GROOM Core Wallet</source>
 <context>
     <name>groom-core</name>
     <message>
-        <location filename="../pivxstrings.cpp" line="+18"/>
+        <location filename="../groomstrings.cpp" line="+18"/>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation type="unfinished">Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</translation>
     </message>

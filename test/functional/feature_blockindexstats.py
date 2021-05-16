@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The PIVX developers
+# Copyright (c) 2021 The groom developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import groomTestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -11,7 +11,7 @@ from test_framework.util import (
 import random
 
 # Test getblockindexstats RPC results
-class BlockIndexStatsTest(PivxTestFramework):
+class BlockIndexStatsTest(groomTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 2

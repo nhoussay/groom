@@ -1,36 +1,36 @@
-Sample init scripts and service configuration for pivxd
+Sample init scripts and service configuration for groomd
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/pivxd.service:    systemd service unit configuration
-    contrib/init/pivxd.openrc:     OpenRC compatible SysV style init script
-    contrib/init/pivxd.openrcconf: OpenRC conf.d file
-    contrib/init/pivxd.conf:       Upstart service configuration file
-    contrib/init/pivxd.init:       CentOS compatible SysV style init script
+    contrib/init/groomd.service:    systemd service unit configuration
+    contrib/init/groomd.openrc:     OpenRC compatible SysV style init script
+    contrib/init/groomd.openrcconf: OpenRC conf.d file
+    contrib/init/groomd.conf:       Upstart service configuration file
+    contrib/init/groomd.init:       CentOS compatible SysV style init script
 
 Service User
 ---------------------------------
 
 All three Linux startup configurations assume the existence of a "groom" user
 and group.  They must be created before attempting to use these scripts.
-The macOS configuration assumes pivxd will be set up for the current user.
+The macOS configuration assumes groomd will be set up for the current user.
 
 Configuration
 ---------------------------------
 
-At a bare minimum, pivxd requires that the rpcpassword setting be set
+At a bare minimum, groomd requires that the rpcpassword setting be set
 when running as a daemon.  If the configuration file does not exist or this
-setting is not set, pivxd will shutdown promptly after startup.
+setting is not set, groomd will shutdown promptly after startup.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that pivxd and client programs read from the configuration
+as a fixed token that groomd and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If pivxd is run with the "-server" flag (set by default), and no rpcpassword is set,
+If groomd is run with the "-server" flag (set by default), and no rpcpassword is set,
 it will use a special cookie file for authentication. The cookie is generated with random
 content when the daemon starts, and deleted when it exits. Read access to this file
 controls who can access it through RPC.
@@ -38,7 +38,7 @@ controls who can access it through RPC.
 By default the cookie is stored in the data directory, but it's location can be overridden
 with the option '-rpccookiefile'.
 
-This allows for running pivxd without having to do any manual configuration.
+This allows for running groomd without having to do any manual configuration.
 
 `conf`, `pid`, and `wallet` accept relative paths which are interpreted as
 relative to the data directory. `wallet` *only* supports relative paths.
@@ -53,16 +53,16 @@ Paths
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              /usr/bin/pivxd
+Binary:              /usr/bin/groomd
 Configuration file:  /etc/groom/groom.conf
-Data directory:      /var/lib/pivxd
-PID file:            `/var/run/pivxd/pivxd.pid` (OpenRC and Upstart) or `/run/pivxd/pivxd.pid` (systemd)
-Lock file:           `/var/lock/subsys/pivxd` (CentOS)
+Data directory:      /var/lib/groomd
+PID file:            `/var/run/groomd/groomd.pid` (OpenRC and Upstart) or `/run/groomd/groomd.pid` (systemd)
+Lock file:           `/var/lock/subsys/groomd` (CentOS)
 
 The configuration file, PID directory (if applicable) and data directory
 should all be owned by the groom user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-groom user and group.  Access to groom-cli and other pivxd rpc clients
+groom user and group.  Access to groom-cli and other groomd rpc clients
 can then be controlled by group membership.
 
 NOTE: When using the systemd .service file, the creation of the aforementioned
@@ -83,7 +83,7 @@ OpenRC).
 
 ### macOS
 
-Binary:              `/usr/local/bin/pivxd`
+Binary:              `/usr/local/bin/groomd`
 Configuration file:  `~/Library/Application Support/GROOM/groom.conf`
 Data directory:      `~/Library/Application Support/GROOM`
 Lock file:           `~/Library/Application Support/GROOM/.lock`
@@ -97,23 +97,23 @@ Installing this .service file consists of just copying it to
 /usr/lib/systemd/system directory, followed by the command
 `systemctl daemon-reload` in order to update running systemd configuration.
 
-To test, run `systemctl start pivxd` and to enable for system startup run
-`systemctl enable pivxd`
+To test, run `systemctl start groomd` and to enable for system startup run
+`systemctl enable groomd`
 
 NOTE: When installing for systemd in Debian/Ubuntu the .service file needs to be copied to the /lib/systemd/system directory instead.
 
 ### OpenRC
 
-Rename pivxd.openrc to pivxd and drop it in /etc/init.d.  Double
+Rename groomd.openrc to groomd and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-`/etc/init.d/pivxd start` and configure it to run on startup with
-`rc-update add pivxd`
+`/etc/init.d/groomd start` and configure it to run on startup with
+`rc-update add groomd`
 
 ### Upstart (for Debian/Ubuntu based distributions)
 
 Upstart is the default init system for Debian/Ubuntu versions older than 15.04. If you are using version 15.04 or newer and haven't manually configured upstart you should follow the systemd instructions instead.
 
-Drop pivxd.conf in /etc/init.  Test by running `service pivxd start`
+Drop groomd.conf in /etc/init.  Test by running `service groomd start`
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -121,21 +121,21 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 
 ### CentOS
 
-Copy pivxd.init to /etc/init.d/pivxd. Test by running `service pivxd start`.
+Copy groomd.init to /etc/init.d/groomd. Test by running `service groomd start`.
 
-Using this script, you can adjust the path and flags to the pivxd program by
-setting the PIVXD and FLAGS environment variables in the file
-/etc/sysconfig/pivxd. You can also use the DAEMONOPTS environment variable here.
+Using this script, you can adjust the path and flags to the groomd program by
+setting the groomD and FLAGS environment variables in the file
+/etc/sysconfig/groomd. You can also use the DAEMONOPTS environment variable here.
 
 ### macOS
 
-Copy org.groom.pivxd.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.groom.pivxd.plist`.
+Copy org.groom.groomd.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.groom.groomd.plist`.
 
-This Launch Agent will cause pivxd to start whenever the user logs in.
+This Launch Agent will cause groomd to start whenever the user logs in.
 
-NOTE: This approach is intended for those wanting to run pivxd as the current user.
-You will need to modify org.groom.pivxd.plist if you intend to use it as a
+NOTE: This approach is intended for those wanting to run groomd as the current user.
+You will need to modify org.groom.groomd.plist if you intend to use it as a
 Launch Daemon with a dedicated groom user.
 
 Auto-respawn

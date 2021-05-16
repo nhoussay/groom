@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2015-2019 The groom developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
@@ -67,7 +67,7 @@ bool AppInit(int argc, char* argv[])
             strUsage += LicenseInfo();
         } else {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  pivxd [options]                     " + _("Start Groom Core Daemon") + "\n";
+                        "  groomd [options]                     " + _("Start Groom Core Daemon") + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -82,7 +82,7 @@ bool AppInit(int argc, char* argv[])
             return false;
         }
         try {
-            gArgs.ReadConfigFile(gArgs.GetArg("-conf", PIVX_CONF_FILENAME));
+            gArgs.ReadConfigFile(gArgs.GetArg("-conf", groom_CONF_FILENAME));
         } catch (const std::exception& e) {
             fprintf(stderr, "Error reading configuration file: %s\n", e.what());
             return false;
@@ -105,12 +105,12 @@ bool AppInit(int argc, char* argv[])
         // Error out when loose non-argument tokens are encountered on command line
         for (int i = 1; i < argc; i++) {
             if (!IsSwitchChar(argv[i][0])) {
-                fprintf(stderr, "Error: Command line contains unexpected token '%s', see pivxd -h for a list of options.\n", argv[i]);
+                fprintf(stderr, "Error: Command line contains unexpected token '%s', see groomd -h for a list of options.\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
         }
 
-        // -server defaults to true for pivxd but not for the GUI so do this here
+        // -server defaults to true for groomd but not for the GUI so do this here
         gArgs.SoftSetBoolArg("-server", true);
         // Set this early so that parameter interactions go to console
         InitLogging();
@@ -173,7 +173,7 @@ int main(int argc, char* argv[])
 {
     SetupEnvironment();
 
-    // Connect pivxd signal handlers
+    // Connect groomd signal handlers
     noui_connect();
 
     return (AppInit(argc, argv) ? 0 : 1);

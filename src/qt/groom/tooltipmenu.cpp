@@ -1,15 +1,15 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/groom/tooltipmenu.h"
 #include "qt/groom/forms/ui_tooltipmenu.h"
 
-#include "qt/groom/pivxgui.h"
+#include "qt/groom/groomgui.h"
 #include "qt/groom/qtutils.h"
 #include <QTimer>
 
-TooltipMenu::TooltipMenu(PIVXGUI *_window, QWidget *parent) :
+TooltipMenu::TooltipMenu(groomGUI *_window, QWidget *parent) :
     PWidget(_window, parent),
     ui(new Ui::TooltipMenu)
 {

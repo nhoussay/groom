@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2015-2019 The groom developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -207,7 +207,7 @@ bool Intro::pickDataDirectory()
 
     /* Only override -datadir if different from the default, to make it possible to
      * override -datadir in the groom.conf file in the default data directory
-     * (to be consistent with pivxd behavior)
+     * (to be consistent with groomd behavior)
      */
 
     if (dataDir != getDefaultDataDirectory())

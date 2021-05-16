@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,7 +37,7 @@ using namespace QtCharts;
 
 #endif
 
-class PIVXGUI;
+class groomGUI;
 class WalletModel;
 
 namespace Ui {
@@ -96,7 +96,7 @@ class DashboardWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit DashboardWidget(PIVXGUI* _window);
+    explicit DashboardWidget(groomGUI* _window);
     ~DashboardWidget();
 
     void loadWalletModel() override;

@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2017-2020 The groom developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_QT_WALLETMODEL_H
-#define PIVX_QT_WALLETMODEL_H
+#ifndef groom_QT_WALLETMODEL_H
+#define groom_QT_WALLETMODEL_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/groom-config.h"
@@ -453,4 +453,4 @@ public Q_SLOTS:
     bool updateAddressBookLabels(const CWDestination& address, const std::string& strName, const std::string& strPurpose);
 };
 
-#endif // PIVX_QT_WALLETMODEL_H
+#endif // groom_QT_WALLETMODEL_H

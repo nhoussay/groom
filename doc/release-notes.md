@@ -10,7 +10,7 @@ Please report bugs using the issue tracker at github: <https://github.com/groom-
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or pivxd/groom-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or groomd/groom-qt (on Linux).
 
 Sapling Parameters
 ==================
@@ -24,7 +24,7 @@ For the following packages, no action is required by the user:
 
 For the other packages, the user must save the param files in the proper location, before being able to run GROOM v5.0.0:
 - macOS/Linux `tar.gz` tarballs include a bash script (`install-params.sh`) to copy the parameters in the appropriate location.
-- Windows `.zip` users need to manually copy the files from the `share/groom` folder to the `%APPDATA%\PIVXParams` directory.
+- Windows `.zip` users need to manually copy the files from the `share/groom` folder to the `%APPDATA%\groomParams` directory.
 - self compilers can run the script from the repository sources (`params/install-params.sh`), or copy the files directly from the `params` subdirectory.
 
 Compatibility

@@ -1,6 +1,6 @@
 usr/local/bin/groom-qt usr/bin
-share/pixmaps/pivx32.xpm usr/share/pixmaps
-share/pixmaps/pivx16.xpm usr/share/pixmaps
-share/pixmaps/pivx128.png usr/share/pixmaps
+share/pixmaps/groom32.xpm usr/share/pixmaps
+share/pixmaps/groom16.xpm usr/share/pixmaps
+share/pixmaps/groom128.png usr/share/pixmaps
 debian/groom-qt.desktop usr/share/applications
 debian/groom-qt.protocol usr/share/kde4/services/

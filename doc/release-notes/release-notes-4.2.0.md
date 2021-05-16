@@ -13,7 +13,7 @@ This version is an optional, but recommended, update for all users and services.
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or pivxd/groom-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GROOM-Qt (on Mac) or groomd/groom-qt (on Linux).
 
 
 Compatibility
@@ -51,7 +51,7 @@ GROOM Core 4.2.0 backports  the internal benchmarking framework from Bitcoin Cor
 The binary file is compiled with groom-core, unless configured with `--disable-bench`.<br>
 After compiling groom-core, the benchmarks can be run with:
 ```
-src/bench/bench_pivx
+src/bench/bench_groom
 ```
 The output will be similar to:
 ```
@@ -64,7 +64,7 @@ Base58CheckEncode,131072,7697,8065,7785,20015,20971,20242
 
 A new 'label' API has been introduced for the wallet. This is intended as a
 replacement for the deprecated 'account' API. The 'account' can continue to
-be used in v4.2 by starting pivxd with the '-deprecatedrpc=accounts'
+be used in v4.2 by starting groomd with the '-deprecatedrpc=accounts'
 argument, and will be fully removed in v5.0.
 
 The label RPC methods mirror the account functionality, with the following functional differences:
@@ -189,7 +189,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #1747 `6f90e8be13` NU custom activation height startup arg. (furszy)
 
 ### Build System
- - #1681 `131ec069fd` [Build] Set complete cpp/cxx flags for bench_pivx binary (Fuzzbawls)
+ - #1681 `131ec069fd` [Build] Set complete cpp/cxx flags for bench_groom binary (Fuzzbawls)
  - #1684 `69fa8dce5e` [Travis] Bump macOS CMake target image (Fuzzbawls)
  - #1710 `ed63a331a3` [Depends] Update dependency fallback URL (Fuzzbawls)
 

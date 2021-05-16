@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2017-2021 The PIVX developers
+// Copyright (c) 2017-2021 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_UINT256_H
-#define PIVX_UINT256_H
+#ifndef groom_UINT256_H
+#define groom_UINT256_H
 
 #include "crypto/common.h"
 
@@ -219,4 +219,4 @@ namespace std {
     };
 }
 
-#endif // PIVX_UINT256_H
+#endif // groom_UINT256_H

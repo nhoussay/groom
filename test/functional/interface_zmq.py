@@ -8,7 +8,7 @@ import os
 import struct
 import time
 
-from test_framework.test_framework import PivxTestFramework, SkipTest
+from test_framework.test_framework import groomTestFramework, SkipTest
 from test_framework.mininode import CTransaction
 from test_framework.util import (assert_equal,
                                  bytes_to_hex_str,
@@ -35,7 +35,7 @@ class ZMQSubscriber:
         return body
 
 
-class ZMQTest (PivxTestFramework):
+class ZMQTest (groomTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 
@@ -53,7 +53,7 @@ class ZMQTest (PivxTestFramework):
         config.read_file(open(self.options.configfile))
 
         if not config["components"].getboolean("ENABLE_ZMQ"):
-            raise SkipTest("pivxd has not been built with zmq enabled.")
+            raise SkipTest("groomd has not been built with zmq enabled.")
 
         # Initialize ZMQ context and socket.
         # All messages are received in the same socket which means

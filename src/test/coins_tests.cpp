@@ -1,9 +1,9 @@
 // Copyright (c) 2014 The Bitcoin Core developers
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "test/test_pivx.h"
+#include "test/test_groom.h"
 
 #include "coins.h"
 #include "script/standard.h"

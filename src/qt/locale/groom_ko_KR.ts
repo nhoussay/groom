@@ -362,7 +362,7 @@ for staking</source>
     </message>
     <message>
         <source>GROOM will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>PIVX는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 PIVs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
+        <translation>groom는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 PIVs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -1814,7 +1814,7 @@ STAKING</source>
     </message>
     <message>
         <source>Automatically start GROOM after logging in to the system.</source>
-        <translation>시스템 로그인 후 PIVX을 자동으로 시작합니다.</translation>
+        <translation>시스템 로그인 후 groom을 자동으로 시작합니다.</translation>
     </message>
     <message>
         <source>&amp;Start GROOM on system login</source>
@@ -1846,7 +1846,7 @@ STAKING</source>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting GROOM.</source>
-        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 PIVX을 다시 시작한 후에 적용됩니다.</translation>
+        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 groom을 다시 시작한 후에 적용됩니다.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -2040,7 +2040,7 @@ https://www.transifex.com/groom-project/groom-project-translations</translation>
     </message>
 </context>
 <context>
-    <name>PIVXGUI</name>
+    <name>groomGUI</name>
     <message>
         <source>GROOM Core</source>
         <translation>GROOM Core</translation>
@@ -2138,7 +2138,7 @@ Address: %4
     </message>
     <message>
         <source>Cannot start groom: click-to-pay handler</source>
-        <translation>PIVX을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
+        <translation>groom을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid GROOM address or malformed URI parameters.</source>
@@ -2276,7 +2276,7 @@ Address: %4
     </message>
     <message>
         <source>A fatal error occurred. GROOM can no longer continue safely and will quit.</source>
-        <translation>치명적인 오류가 발생하였습니다. PIVX는 더 이상 안전하게 계속될 수 없으며, 곧 종료됩니다.</translation>
+        <translation>치명적인 오류가 발생하였습니다. groom는 더 이상 안전하게 계속될 수 없으며, 곧 종료됩니다.</translation>
     </message>
     <message>
         <source>GROOM Core</source>
@@ -4827,7 +4827,7 @@ GROOM Core Wallet</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - GROOM believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GROOM 선언서(manifesto) 내용: 프라이버시는 타협할 수 없는 인간의 기본적인 인권입니다. 사용자가 원한다면 언제든 누구에게든 정보를 공유할 수 있는 자유를 보장합니다. PIVX는 자기 주권(self sovereignty)을 추구합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GROOM 선언서(manifesto) 내용: 프라이버시는 타협할 수 없는 인간의 기본적인 인권입니다. 사용자가 원한다면 언제든 누구에게든 정보를 공유할 수 있는 자유를 보장합니다. groom는 자기 주권(self sovereignty)을 추구합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>The masternode network is GROOM's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
@@ -4835,7 +4835,7 @@ GROOM Core Wallet</translation>
     </message>
     <message>
         <source>How GROOM respects your privacy?</source>
-        <translation>PIVX는 프라이버시를 얼마나 중요하게 생각하나요?</translation>
+        <translation>groom는 프라이버시를 얼마나 중요하게 생각하나요?</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>

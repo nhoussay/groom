@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +25,7 @@ class SendMultiRow : public PWidget
     Q_OBJECT
 
 public:
-    explicit SendMultiRow(PIVXGUI* _window, PWidget *parent = nullptr);
+    explicit SendMultiRow(groomGUI* _window, PWidget *parent = nullptr);
     ~SendMultiRow();
 
     void hideLabels();

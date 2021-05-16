@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The groom developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,7 +8,7 @@
 #include "config/groom-config.h"
 #endif
 
-#include "qt/groom/pivxgui.h"
+#include "qt/groom/groomgui.h"
 
 #include "clientmodel.h"
 #include "guiconstants.h"
@@ -209,7 +209,7 @@ public:
     /// Get process return value
     int getReturnValue() { return returnValue; }
 
-    /// Get window identifier of QMainWindow (PIVXGUI)
+    /// Get window identifier of QMainWindow (groomGUI)
     WId getMainWinId() const;
 
 public Q_SLOTS:
@@ -230,7 +230,7 @@ private:
     QThread* coreThread{nullptr};
     OptionsModel* optionsModel{nullptr};
     ClientModel* clientModel{nullptr};
-    PIVXGUI* window{nullptr};
+    groomGUI* window{nullptr};
     QTimer* pollShutdownTimer{nullptr};
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer{nullptr};
@@ -372,10 +372,10 @@ void BitcoinApplication::createOptionsModel()
 
 void BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
 {
-    window = new PIVXGUI(networkStyle, 0);
+    window = new groomGUI(networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
-    connect(pollShutdownTimer, &QTimer::timeout, window, &PIVXGUI::detectShutdown);
+    connect(pollShutdownTimer, &QTimer::timeout, window, &groomGUI::detectShutdown);
 }
 
 void BitcoinApplication::createSplashScreen(const NetworkStyle* networkStyle)
@@ -422,7 +422,7 @@ void BitcoinApplication::startThread()
     connect(executor, &BitcoinCore::runawayException, this, &BitcoinApplication::handleRunawayException);
     connect(this, &BitcoinApplication::requestedInitialize, executor, &BitcoinCore::initialize);
     connect(this, &BitcoinApplication::requestedShutdown, executor, &BitcoinCore::shutdown);
-    connect(window, &PIVXGUI::requestedRestart, executor, &BitcoinCore::restart);
+    connect(window, &groomGUI::requestedRestart, executor, &BitcoinCore::restart);
     /*  make sure executor object is deleted in its own thread */
     connect(this, &BitcoinApplication::stopThread, executor, &QObject::deleteLater);
     connect(this, &BitcoinApplication::stopThread, coreThread, &QThread::quit);
@@ -491,8 +491,8 @@ void BitcoinApplication::initializeResult(int retval)
             walletModel = new WalletModel(pwalletMain, optionsModel);
             walletModel->setClientModel(clientModel);
 
-            window->addWallet(PIVXGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(PIVXGUI::DEFAULT_WALLET);
+            window->addWallet(groomGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(groomGUI::DEFAULT_WALLET);
         }
 #endif
 
@@ -507,8 +507,8 @@ void BitcoinApplication::initializeResult(int retval)
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
         // GROOM: URIs or payment requests:
-        //connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &PIVXGUI::handlePaymentRequest);
-        connect(window, &PIVXGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
+        //connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &groomGUI::handlePaymentRequest);
+        connect(window, &groomGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
         connect(paymentServer, &PaymentServer::message, [this](const QString& title, const QString& message, unsigned int style) {
           window->message(title, message, style);
         });
@@ -552,7 +552,7 @@ int main(int argc, char* argv[])
 // Do not refer to data directory yet, this can be overridden by Intro::pickDataDirectory
 
 /// 2. Basic Qt initialization (not dependent on parameters or configuration)
-    Q_INIT_RESOURCE(pivx_locale);
+    Q_INIT_RESOURCE(groom_locale);
     Q_INIT_RESOURCE(groom);
 
     // Generate high-dpi pixmaps
@@ -608,7 +608,7 @@ int main(int argc, char* argv[])
         return 1;
     }
     try {
-        gArgs.ReadConfigFile(gArgs.GetArg("-conf", PIVX_CONF_FILENAME));
+        gArgs.ReadConfigFile(gArgs.GetArg("-conf", groom_CONF_FILENAME));
     } catch (const std::exception& e) {
         QMessageBox::critical(0, QObject::tr("GROOM Core"),
             QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));

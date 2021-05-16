@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020 The PIVX developers
+# Copyright (c) 2020 The groom developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import PivxTier2TestFramework
+from test_framework.test_framework import groomTier2TestFramework
 from test_framework.util import (
     assert_equal,
     assert_true,
@@ -21,7 +21,7 @@ Test checking:
  5) Proposal and vote sync.
 """
 
-class MasternodeGovernanceBasicTest(PivxTier2TestFramework):
+class MasternodeGovernanceBasicTest(groomTier2TestFramework):
 
     def check_budget_finalization_sync(self, votesCount, status):
         for i in range(0, len(self.nodes)):

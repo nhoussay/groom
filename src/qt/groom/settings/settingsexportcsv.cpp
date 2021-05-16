@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +11,7 @@
 #include "qt/groom/qtutils.h"
 #include "guiinterface.h"
 
-SettingsExportCSV::SettingsExportCSV(PIVXGUI* _window, QWidget *parent) :
+SettingsExportCSV::SettingsExportCSV(groomGUI* _window, QWidget *parent) :
     PWidget(_window, parent),
     ui(new Ui::SettingsExportCSV)
 {
@@ -59,7 +59,7 @@ void SettingsExportCSV::selectFileOutput(const bool& isTxExport)
 {
     QString filename = GUIUtil::getSaveFileName(this,
                                         isTxExport ? tr("Export CSV") : tr("Export Address List"), QString(),
-                                        isTxExport ? tr("PIVX_tx_csv_export(*.csv)") : tr("PIVX_addresses_csv_export(*.csv)"),
+                                        isTxExport ? tr("groom_tx_csv_export(*.csv)") : tr("groom_addresses_csv_export(*.csv)"),
                                         nullptr);
 
     if (isTxExport) {

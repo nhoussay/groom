@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,7 +9,7 @@
 #include "qt/groom/focuseddialog.h"
 #include "qt/groom/snackbar.h"
 
-class PIVXGUI;
+class groomGUI;
 class WalletModel;
 
 namespace Ui {
@@ -21,7 +21,7 @@ class SendCustomFeeDialog : public FocusedDialog
     Q_OBJECT
 
 public:
-    explicit SendCustomFeeDialog(PIVXGUI* parent, WalletModel* model);
+    explicit SendCustomFeeDialog(groomGUI* parent, WalletModel* model);
     ~SendCustomFeeDialog();
 
     void showEvent(QShowEvent* event) override;

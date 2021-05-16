@@ -1,17 +1,17 @@
 // Copyright (c) 2014-2021 The Bitcoin developers
-// Copyright (c) 2017-2021 The PIVX developers
+// Copyright (c) 2017-2021 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_CHAINPARAMSBASE_H
-#define PIVX_CHAINPARAMSBASE_H
+#ifndef groom_CHAINPARAMSBASE_H
+#define groom_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between groom-cli and pivxd)
+ * CBaseChainParams defines the base parameters (shared between groom-cli and groomd)
  * of a given instance of the Groom system.
  */
 class CBaseChainParams
@@ -62,4 +62,4 @@ void SelectBaseParams(const std::string& chain);
  */
 std::string ChainNameFromCommandLine();
 
-#endif // PIVX_CHAINPARAMSBASE_H
+#endif // groom_CHAINPARAMSBASE_H

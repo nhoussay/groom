@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The groom developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -77,9 +77,9 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 
-const char * const PIVX_CONF_FILENAME = "groom.conf";
-const char * const PIVX_PID_FILENAME = "groom.pid";
-const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
+const char * const groom_CONF_FILENAME = "groom.conf";
+const char * const groom_PID_FILENAME = "groom.pid";
+const char * const groom_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
 // GROOM only features
@@ -183,7 +183,7 @@ public:
         std::pair<bool,std::string> found_result(false, std::string());
 
         // We pass "true" to GetArgHelper in order to return the last
-        // argument value seen from the command line (so "pivxd -foo=bar
+        // argument value seen from the command line (so "groomd -foo=bar
         // -foo=baz" gives GetArg(am,"foo")=={true,"baz"}
         found_result = GetArgHelper(am.m_override_args, arg, true);
         if (found_result.first) {
@@ -520,13 +520,13 @@ static RecursiveMutex csPathCached;
 static fs::path ZC_GetBaseParamsDir()
 {
     // Copied from GetDefaultDataDir and adapter for zcash params.
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVXParams
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVXParams
-    // Mac: ~/Library/Application Support/PIVXParams
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\groomParams
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\groomParams
+    // Mac: ~/Library/Application Support/groomParams
     // Unix: ~/.groom-params
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVXParams";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "groomParams";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -538,7 +538,7 @@ static fs::path ZC_GetBaseParamsDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectories(pathRet);
-    return pathRet / "PIVXParams";
+    return pathRet / "groomParams";
 #else
     // Unix
     return pathRet / ".groom-params";
@@ -719,7 +719,7 @@ fs::path GetConfigFile(const std::string& confPath)
 
 fs::path GetMasternodeConfigFile()
 {
-    fs::path pathConfigFile(gArgs.GetArg("-mnconf", PIVX_MASTERNODE_CONF_FILENAME));
+    fs::path pathConfigFile(gArgs.GetArg("-mnconf", groom_MASTERNODE_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile);
 }
 
@@ -819,7 +819,7 @@ std::string ArgsManager::GetChainName() const
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", PIVX_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", groom_PID_FILENAME));
     return AbsPathForConfigVal(pathPidFile);
 }
 
