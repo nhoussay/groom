@@ -1,17 +1,17 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/addresseswidget.h"
-#include "qt/pivx/forms/ui_addresseswidget.h"
-#include "qt/pivx/addresslabelrow.h"
-#include "qt/pivx/addnewaddressdialog.h"
-#include "qt/pivx/tooltipmenu.h"
+#include "qt/groom/addresseswidget.h"
+#include "qt/groom/forms/ui_addresseswidget.h"
+#include "qt/groom/addresslabelrow.h"
+#include "qt/groom/addnewaddressdialog.h"
+#include "qt/groom/tooltipmenu.h"
 
-#include "qt/pivx/addnewcontactdialog.h"
-#include "qt/pivx/pivxgui.h"
+#include "qt/groom/addnewcontactdialog.h"
+#include "qt/groom/pivxgui.h"
 #include "guiutil.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/qtutils.h"
 #include "walletmodel.h"
 
 #include <QModelIndex>

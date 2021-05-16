@@ -1,11 +1,11 @@
-// Copyright (c) 2020 The PIVX developers
+// Copyright (c) 2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/balancebubble.h"
-#include "qt/pivx/forms/ui_balancebubble.h"
+#include "qt/groom/balancebubble.h"
+#include "qt/groom/forms/ui_balancebubble.h"
 
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/qtutils.h"
 
 #include <QGraphicsOpacityEffect>
 #include <QPropertyAnimation>

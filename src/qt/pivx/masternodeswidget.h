@@ -1,14 +1,14 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef MASTERNODESWIDGET_H
 #define MASTERNODESWIDGET_H
 
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/furabstractlistitemdelegate.h"
-#include "qt/pivx/mnmodel.h"
-#include "qt/pivx/tooltipmenu.h"
+#include "qt/groom/pwidget.h"
+#include "qt/groom/furabstractlistitemdelegate.h"
+#include "qt/groom/mnmodel.h"
+#include "qt/groom/tooltipmenu.h"
 #include "walletmodel.h"
 
 #include <atomic>

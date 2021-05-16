@@ -1,16 +1,16 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/settings/settingsinformationwidget.h"
-#include "qt/pivx/settings/forms/ui_settingsinformationwidget.h"
+#include "qt/groom/settings/settingsinformationwidget.h"
+#include "qt/groom/settings/forms/ui_settingsinformationwidget.h"
 
 #include "clientmodel.h"
 #include "chainparams.h"
 #include "db.h"
 #include "util/system.h"
 #include "guiutil.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/qtutils.h"
 
 #include <QDir>
 
@@ -102,7 +102,7 @@ SettingsInformationWidget::SettingsInformationWidget(PIVXGUI* _window,QWidget *p
     });
     connect(ui->pushButtonFile, &QPushButton::clicked, [this](){
         if (!GUIUtil::openConfigfile())
-            inform(tr("Unable to open pivx.conf with default application"));
+            inform(tr("Unable to open groom.conf with default application"));
     });
     connect(ui->pushButtonNetworkMonitor, &QPushButton::clicked, this, &SettingsInformationWidget::openNetworkMonitor);
 }

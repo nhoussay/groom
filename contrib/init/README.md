@@ -5,7 +5,7 @@ Upstart: pivxd.conf
 OpenRC:  pivxd.openrc
          pivxd.openrcconf
 CentOS:  pivxd.init
-macOS:    org.pivx.pivxd.plist
+macOS:    org.groom.pivxd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

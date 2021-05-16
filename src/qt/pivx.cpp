@@ -1,14 +1,14 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The GROOM developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/groom-config.h"
 #endif
 
-#include "qt/pivx/pivxgui.h"
+#include "qt/groom/pivxgui.h"
 
 #include "clientmodel.h"
 #include "guiconstants.h"
@@ -17,8 +17,8 @@
 #include "net.h"
 #include "networkstyle.h"
 #include "optionsmodel.h"
-#include "qt/pivx/splash.h"
-#include "qt/pivx/welcomecontentwidget.h"
+#include "qt/groom/splash.h"
+#include "qt/groom/welcomecontentwidget.h"
 #include "utilitydialog.h"
 #include "winshutdownmonitor.h"
 
@@ -83,7 +83,7 @@ static void InitMessage(const std::string& message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("pivx-core", psz).toStdString();
+    return QCoreApplication::translate("groom-core", psz).toStdString();
 }
 
 static QString GetLangTerritory(bool forceLangFromSetting = false)
@@ -130,11 +130,11 @@ static void initTranslations(QTranslator& qtTranslatorBase, QTranslator& qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in pivx.qrc)
+    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in groom.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in pivx.qrc)
+    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in groom.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -150,7 +150,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
     }
 }
 
-/** Class encapsulating PIVX Core startup and shutdown.
+/** Class encapsulating GROOM Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class BitcoinCore : public QObject
@@ -177,7 +177,7 @@ private:
     void handleRunawayException(const std::exception* e);
 };
 
-/** Main PIVX application object */
+/** Main GROOM application object */
 class BitcoinApplication : public QApplication
 {
     Q_OBJECT
@@ -242,7 +242,7 @@ private:
     void startThread();
 };
 
-#include "pivx.moc"
+#include "groom.moc"
 
 BitcoinCore::BitcoinCore() : QObject()
 {
@@ -506,7 +506,7 @@ void BitcoinApplication::initializeResult(int retval)
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // PIVX: URIs or payment requests:
+        // GROOM: URIs or payment requests:
         //connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &PIVXGUI::handlePaymentRequest);
         connect(window, &PIVXGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
         connect(paymentServer, &PaymentServer::message, [this](const QString& title, const QString& message, unsigned int style) {
@@ -528,7 +528,7 @@ void BitcoinApplication::shutdownResult(int retval)
 
 void BitcoinApplication::handleRunawayException(const QString& message)
 {
-    QMessageBox::critical(0, "Runaway exception", QObject::tr("A fatal error occurred. PIVX can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", QObject::tr("A fatal error occurred. GROOM can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(1);
 }
 
@@ -553,7 +553,7 @@ int main(int argc, char* argv[])
 
 /// 2. Basic Qt initialization (not dependent on parameters or configuration)
     Q_INIT_RESOURCE(pivx_locale);
-    Q_INIT_RESOURCE(pivx);
+    Q_INIT_RESOURCE(groom);
 
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -600,17 +600,17 @@ int main(int argc, char* argv[])
     if (!Intro::pickDataDirectory())
         return 0;
 
-    /// 6. Determine availability of data and blocks directory and parse pivx.conf
+    /// 6. Determine availability of data and blocks directory and parse groom.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false))) {
-        QMessageBox::critical(0, QObject::tr("PIVX Core"),
+        QMessageBox::critical(0, QObject::tr("GROOM Core"),
             QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(gArgs.GetArg("-datadir", ""))));
         return 1;
     }
     try {
         gArgs.ReadConfigFile(gArgs.GetArg("-conf", PIVX_CONF_FILENAME));
     } catch (const std::exception& e) {
-        QMessageBox::critical(0, QObject::tr("PIVX Core"),
+        QMessageBox::critical(0, QObject::tr("GROOM Core"),
             QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return 0;
     }
@@ -625,7 +625,7 @@ int main(int argc, char* argv[])
     try {
         SelectParams(gArgs.GetChainName());
     } catch(const std::exception& e) {
-        QMessageBox::critical(0, QObject::tr("PIVX Core"), QObject::tr("Error: %1").arg(e.what()));
+        QMessageBox::critical(0, QObject::tr("GROOM Core"), QObject::tr("Error: %1").arg(e.what()));
         return 1;
     }
 #ifdef ENABLE_WALLET
@@ -644,7 +644,7 @@ int main(int argc, char* argv[])
     /// 7a. parse masternode.conf
     std::string strErr;
     if (!masternodeConfig.read(strErr)) {
-        QMessageBox::critical(0, QObject::tr("PIVX Core"),
+        QMessageBox::critical(0, QObject::tr("GROOM Core"),
             QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return 0;
     }
@@ -659,7 +659,7 @@ int main(int argc, char* argv[])
         exit(0);
 
     // Start up the payment server early, too, so impatient users that click on
-    // pivx: links repeatedly have their payment requests routed to this process:
+    // groom: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 

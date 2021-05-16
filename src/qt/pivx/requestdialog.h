@@ -1,12 +1,12 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef REQUESTDIALOG_H
 #define REQUESTDIALOG_H
 
-#include "qt/pivx/focuseddialog.h"
-#include "qt/pivx/snackbar.h"
+#include "qt/groom/focuseddialog.h"
+#include "qt/groom/snackbar.h"
 #include "walletmodel.h"
 
 #include <QPixmap>

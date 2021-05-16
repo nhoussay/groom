@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,8 +7,8 @@
 
 #include <QWidget>
 #include <QColor>
-#include "qt/pivx/myaddressrow.h"
-#include "qt/pivx/furlistrow.h"
+#include "qt/groom/myaddressrow.h"
+#include "qt/groom/furlistrow.h"
 #include "guiutil.h"
 
 

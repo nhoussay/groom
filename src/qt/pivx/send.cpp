@@ -1,16 +1,16 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/send.h"
-#include "qt/pivx/forms/ui_send.h"
-#include "qt/pivx/addnewcontactdialog.h"
-#include "qt/pivx/qtutils.h"
-#include "qt/pivx/sendchangeaddressdialog.h"
-#include "qt/pivx/optionbutton.h"
-#include "qt/pivx/sendconfirmdialog.h"
-#include "qt/pivx/guitransactionsutils.h"
-#include "qt/pivx/loadingdialog.h"
+#include "qt/groom/send.h"
+#include "qt/groom/forms/ui_send.h"
+#include "qt/groom/addnewcontactdialog.h"
+#include "qt/groom/qtutils.h"
+#include "qt/groom/sendchangeaddressdialog.h"
+#include "qt/groom/optionbutton.h"
+#include "qt/groom/sendconfirmdialog.h"
+#include "qt/groom/guitransactionsutils.h"
+#include "qt/groom/loadingdialog.h"
 #include "clientmodel.h"
 #include "optionsmodel.h"
 #include "operationresult.h"
@@ -73,7 +73,7 @@ SendWidget::SendWidget(PIVXGUI* parent) :
 
     // Uri
     ui->btnUri->setTitleClassAndText("btn-title-grey", tr("Open URI"));
-    ui->btnUri->setSubTitleClassAndText("text-subtitle", tr("Parse a PIVX URI"));
+    ui->btnUri->setSubTitleClassAndText("text-subtitle", tr("Parse a GROOM URI"));
 
     // Shield coins
     ui->btnShieldCoins->setTitleClassAndText("btn-title-grey", tr("Shield Coins"));

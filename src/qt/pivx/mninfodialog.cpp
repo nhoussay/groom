@@ -1,13 +1,13 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/mninfodialog.h"
-#include "qt/pivx/forms/ui_mninfodialog.h"
+#include "qt/groom/mninfodialog.h"
+#include "qt/groom/forms/ui_mninfodialog.h"
 #include "walletmodel.h"
 #include "wallet/wallet.h"
 #include "guiutil.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/qtutils.h"
 #include <QDateTime>
 
 MnInfoDialog::MnInfoDialog(QWidget *parent) :

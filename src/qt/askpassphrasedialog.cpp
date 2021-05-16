@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The GROOM developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,10 +11,10 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 #include "walletmodel.h"
-#include "qt/pivx/qtutils.h"
-#include "qt/pivx/loadingdialog.h"
-#include "qt/pivx/defaultdialog.h"
-#include "qt/pivx/pivxgui.h"
+#include "qt/groom/qtutils.h"
+#include "qt/groom/loadingdialog.h"
+#include "qt/groom/defaultdialog.h"
+#include "qt/groom/pivxgui.h"
 #include <QDebug>
 
 #include <QKeyEvent>
@@ -347,7 +347,7 @@ void AskPassphraseDialog::warningMessage()
     openStandardDialog(
             tr("Wallet encrypted"),
             "<qt>" +
-            tr("PIVX will close now to finish the encryption process. "
+            tr("GROOM will close now to finish the encryption process. "
                "Remember that encrypting your wallet cannot fully protect "
                "your PIVs from being stolen by malware infecting your computer.") +
             "<br><br><b>" +

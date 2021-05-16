@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,8 +7,8 @@
 
 #include <QWidget>
 #include "qt/askpassphrasedialog.h"
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/lockunlock.h"
+#include "qt/groom/pwidget.h"
+#include "qt/groom/lockunlock.h"
 #include "amount.h"
 #include <QTimer>
 #include <QProgressBar>

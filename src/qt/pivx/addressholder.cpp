@@ -1,9 +1,9 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/addressholder.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/addressholder.h"
+#include "qt/groom/qtutils.h"
 
 void AddressHolder::init(QWidget* holder,const QModelIndex &index, bool isHovered, bool isSelected) const {
     MyAddressRow *row = static_cast<MyAddressRow*>(holder);

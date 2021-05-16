@@ -1,14 +1,14 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef RECEIVEWIDGET_H
 #define RECEIVEWIDGET_H
 
-#include "qt/pivx/pwidget.h"
+#include "qt/groom/pwidget.h"
 #include "addresstablemodel.h"
-#include "qt/pivx/furabstractlistitemdelegate.h"
-#include "qt/pivx/addressfilterproxymodel.h"
+#include "qt/groom/furabstractlistitemdelegate.h"
+#include "qt/groom/addressfilterproxymodel.h"
 
 #include <QSpacerItem>
 #include <QWidget>

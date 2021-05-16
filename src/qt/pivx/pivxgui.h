@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,7 +6,7 @@
 #define PIVX_CORE_NEW_GUI_PIVXGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/groom-config.h"
 #endif
 
 #include <QMainWindow>
@@ -14,17 +14,17 @@
 #include <QSystemTrayIcon>
 #include <QLabel>
 
-#include "qt/pivx/navmenuwidget.h"
-#include "qt/pivx/topbar.h"
-#include "qt/pivx/dashboardwidget.h"
-#include "qt/pivx/send.h"
-#include "qt/pivx/receivewidget.h"
-#include "qt/pivx/addresseswidget.h"
-#include "qt/pivx/coldstakingwidget.h"
-#include "qt/pivx/masternodeswidget.h"
-#include "qt/pivx/snackbar.h"
-#include "qt/pivx/settings/settingswidget.h"
-#include "qt/pivx/settings/settingsfaqwidget.h"
+#include "qt/groom/navmenuwidget.h"
+#include "qt/groom/topbar.h"
+#include "qt/groom/dashboardwidget.h"
+#include "qt/groom/send.h"
+#include "qt/groom/receivewidget.h"
+#include "qt/groom/addresseswidget.h"
+#include "qt/groom/coldstakingwidget.h"
+#include "qt/groom/masternodeswidget.h"
+#include "qt/groom/snackbar.h"
+#include "qt/groom/settings/settingswidget.h"
+#include "qt/groom/settings/settingsfaqwidget.h"
 #include "qt/rpcconsole.h"
 
 namespace interfaces {
@@ -38,7 +38,7 @@ class WalletModel;
 
 
 /**
-  PIVX GUI main class. This class represents the main window of the PIVX UI. It communicates with both the client and
+  GROOM GUI main class. This class represents the main window of the GROOM UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
 class PIVXGUI : public QMainWindow

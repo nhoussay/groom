@@ -1,6 +1,6 @@
 [Protocol]
-exec=pivx-qt '%u'
-protocol=pivx
+exec=groom-qt '%u'
+protocol=groom
 input=none
 output=none
 helper=true

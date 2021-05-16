@@ -1,10 +1,10 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/sendcustomfeedialog.h"
-#include "qt/pivx/forms/ui_sendcustomfeedialog.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/sendcustomfeedialog.h"
+#include "qt/groom/forms/ui_sendcustomfeedialog.h"
+#include "qt/groom/qtutils.h"
 #include "walletmodel.h"
 #include "optionsmodel.h"
 #include "guiutil.h"

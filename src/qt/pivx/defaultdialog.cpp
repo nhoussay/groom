@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/defaultdialog.h"
-#include "qt/pivx/forms/ui_defaultdialog.h"
+#include "qt/groom/defaultdialog.h"
+#include "qt/groom/forms/ui_defaultdialog.h"
 #include "guiutil.h"
 
 DefaultDialog::DefaultDialog(QWidget *parent) :

@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,17 +6,17 @@
 #define SETTINGSWIDGET_H
 
 #include <QWidget>
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/settings/settingsbackupwallet.h"
-#include "qt/pivx/settings/settingsexportcsv.h"
-#include "qt/pivx/settings/settingsbittoolwidget.h"
-#include "qt/pivx/settings/settingssignmessagewidgets.h"
-#include "qt/pivx/settings/settingswalletrepairwidget.h"
-#include "qt/pivx/settings/settingswalletoptionswidget.h"
-#include "qt/pivx/settings/settingsmainoptionswidget.h"
-#include "qt/pivx/settings/settingsdisplayoptionswidget.h"
-#include "qt/pivx/settings/settingsinformationwidget.h"
-#include "qt/pivx/settings/settingsconsolewidget.h"
+#include "qt/groom/pwidget.h"
+#include "qt/groom/settings/settingsbackupwallet.h"
+#include "qt/groom/settings/settingsexportcsv.h"
+#include "qt/groom/settings/settingsbittoolwidget.h"
+#include "qt/groom/settings/settingssignmessagewidgets.h"
+#include "qt/groom/settings/settingswalletrepairwidget.h"
+#include "qt/groom/settings/settingswalletoptionswidget.h"
+#include "qt/groom/settings/settingsmainoptionswidget.h"
+#include "qt/groom/settings/settingsdisplayoptionswidget.h"
+#include "qt/groom/settings/settingsinformationwidget.h"
+#include "qt/groom/settings/settingsconsolewidget.h"
 
 class PIVXGUI;
 

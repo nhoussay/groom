@@ -1,14 +1,14 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/masternodeswidget.h"
-#include "qt/pivx/forms/ui_masternodeswidget.h"
+#include "qt/groom/masternodeswidget.h"
+#include "qt/groom/forms/ui_masternodeswidget.h"
 
-#include "qt/pivx/qtutils.h"
-#include "qt/pivx/mnrow.h"
-#include "qt/pivx/mninfodialog.h"
-#include "qt/pivx/masternodewizarddialog.h"
+#include "qt/groom/qtutils.h"
+#include "qt/groom/mnrow.h"
+#include "qt/groom/mninfodialog.h"
+#include "qt/groom/masternodewizarddialog.h"
 
 #include "activemasternode.h"
 #include "clientmodel.h"
@@ -22,7 +22,7 @@
 #include "wallet/wallet.h"
 #include "askpassphrasedialog.h"
 #include "util/system.h"
-#include "qt/pivx/optionbutton.h"
+#include "qt/groom/optionbutton.h"
 #include <iostream>
 #include <fstream>
 
@@ -350,7 +350,7 @@ void MasterNodesWidget::onInfoMNClicked()
     if (dialog->exportMN) {
         if (ask(tr("Remote Masternode Data"),
                 tr("You are just about to export the required data to run a Masternode\non a remote server to your clipboard.\n\n\n"
-                   "You will only have to paste the data in the pivx.conf file\nof your remote server and start it, "
+                   "You will only have to paste the data in the groom.conf file\nof your remote server and start it, "
                    "then start the Masternode using\nthis controller wallet (select the Masternode in the list and press \"start\").\n"
                 ))) {
             // export data

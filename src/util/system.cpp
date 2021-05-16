@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/groom-config.h"
 #endif
 
 #include "util/system.h"
@@ -77,12 +77,12 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 
-const char * const PIVX_CONF_FILENAME = "pivx.conf";
-const char * const PIVX_PID_FILENAME = "pivx.pid";
+const char * const PIVX_CONF_FILENAME = "groom.conf";
+const char * const PIVX_PID_FILENAME = "groom.pid";
 const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
-// PIVX only features
+// GROOM only features
 // Masternode
 std::atomic<bool> fMasterNode{false};
 std::string strMasterNodeAddr = "";
@@ -466,7 +466,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "pivx";
+    const char* pszModule = "groom";
 #endif
     if (pex)
         return strprintf(
@@ -485,13 +485,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVX
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVX
-// Mac: ~/Library/Application Support/PIVX
-// Unix: ~/.pivx
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\GROOM
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\GROOM
+// Mac: ~/Library/Application Support/GROOM
+// Unix: ~/.groom
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVX";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "GROOM";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -503,10 +503,10 @@ fs::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectories(pathRet);
-    return pathRet / "PIVX";
+    return pathRet / "GROOM";
 #else
     // Unix
-    return pathRet / ".pivx";
+    return pathRet / ".groom";
 #endif
 #endif
 }
@@ -523,7 +523,7 @@ static fs::path ZC_GetBaseParamsDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVXParams
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVXParams
     // Mac: ~/Library/Application Support/PIVXParams
-    // Unix: ~/.pivx-params
+    // Unix: ~/.groom-params
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVXParams";
@@ -541,7 +541,7 @@ static fs::path ZC_GetBaseParamsDir()
     return pathRet / "PIVXParams";
 #else
     // Unix
-    return pathRet / ".pivx-params";
+    return pathRet / ".groom-params";
 #endif
 #endif
 }
@@ -607,14 +607,14 @@ void initZKSNARKS()
         CFRelease(mainBundle);
 #else
         // Linux fallback path for debuild/ppa based installs
-        sapling_spend = "/usr/share/pivx/sapling-spend.params";
-        sapling_output = "/usr/share/pivx/sapling-output.params";
+        sapling_spend = "/usr/share/groom/sapling-spend.params";
+        sapling_output = "/usr/share/groom/sapling-output.params";
         if (fs::exists(sapling_spend) && fs::exists(sapling_output)) {
             fParamsFound = true;
         } else {
             // Linux fallback for local installs
-            sapling_spend = "/usr/local/share/pivx/sapling-spend.params";
-            sapling_output = "/usr/local/share/pivx/sapling-output.params";
+            sapling_spend = "/usr/local/share/groom/sapling-spend.params";
+            sapling_output = "/usr/local/share/groom/sapling-output.params";
         }
 #endif
         if (fs::exists(sapling_spend) && fs::exists(sapling_output))

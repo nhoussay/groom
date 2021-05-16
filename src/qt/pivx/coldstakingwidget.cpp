@@ -1,23 +1,23 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/coldstakingwidget.h"
-#include "qt/pivx/forms/ui_coldstakingwidget.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/groom/coldstakingwidget.h"
+#include "qt/groom/forms/ui_coldstakingwidget.h"
+#include "qt/groom/qtutils.h"
 #include "amount.h"
 #include "guiutil.h"
-#include "qt/pivx/requestdialog.h"
-#include "qt/pivx/tooltipmenu.h"
-#include "qt/pivx/furlistrow.h"
-#include "qt/pivx/sendconfirmdialog.h"
-#include "qt/pivx/addnewcontactdialog.h"
-#include "qt/pivx/guitransactionsutils.h"
+#include "qt/groom/requestdialog.h"
+#include "qt/groom/tooltipmenu.h"
+#include "qt/groom/furlistrow.h"
+#include "qt/groom/sendconfirmdialog.h"
+#include "qt/groom/addnewcontactdialog.h"
+#include "qt/groom/guitransactionsutils.h"
 #include "walletmodel.h"
 #include "optionsmodel.h"
 #include "coincontroldialog.h"
 #include "coincontrol.h"
-#include "qt/pivx/csrow.h"
+#include "qt/groom/csrow.h"
 
 #define DECORATION_SIZE 70
 #define NUM_ITEMS 3

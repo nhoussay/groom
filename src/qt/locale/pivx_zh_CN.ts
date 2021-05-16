@@ -114,11 +114,11 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your GROOM addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这是用于发送PIVX的地址。在发送PIVX之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your GROOM addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>这是用于接收PIVX的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
@@ -348,7 +348,7 @@ for staking</source>
         <translation>删除</translation>
     </message>
     <message>
-        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <source>GROOM will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
         <translation>PIVX将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取PIVs。</translation>
     </message>
     <message>
@@ -992,7 +992,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>编辑发送地址</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <source>The entered address "%1" is not a valid GROOM address.</source>
         <translation>所输入的地址“%1”不是有效的PIVX地址。</translation>
     </message>
     <message>
@@ -1045,15 +1045,15 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>版本</translation>
     </message>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Core</translation>
+        <source>GROOM Core</source>
+        <translation>GROOM Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-位)</translation>
     </message>
     <message>
-        <source>About PIVX Core</source>
+        <source>About GROOM Core</source>
         <translation>关于PIVX Core</translation>
     </message>
     <message>
@@ -1108,16 +1108,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>欢迎</translation>
     </message>
     <message>
-        <source>Welcome to PIVX Core.</source>
-        <translation>欢迎使用 PIVX Core</translation>
+        <source>Welcome to GROOM Core.</source>
+        <translation>欢迎使用 GROOM Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where GROOM Core will store its data.</source>
         <translation>由于这是该程序第一次启动，您可以选择存储PIVX Core 数据的位置。</translation>
     </message>
     <message>
-        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>PIVX Core将下载并存储PIVX区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
+        <source>GROOM Core will download and store a copy of the GROOM block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>GROOM Core将下载并存储PIVX区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1136,8 +1136,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>好的</translation>
     </message>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Core</translation>
+        <source>GROOM Core</source>
+        <translation>GROOM Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1236,7 +1236,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>创建新的主节点控制器</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PIVX Masternode you must dedicate 10,000 PIV (the unit of PIVX) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a GROOM Masternode you must dedicate 10,000 PIV (the unit of GROOM) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要去创建一个PIVX主节点，你必须奉献10,000 PIV（PIVX的单位）到网络（但是这些币还是属于你的，一直为你所有）。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1439,7 +1439,7 @@ Please wait few more minutes (masternode collaterals require %1 confirmations).<
 on a remote server to your clipboard.
 
 
-You will only have to paste the data in the pivx.conf file
+You will only have to paste the data in the groom.conf file
 of your remote server and start it, then start the Masternode using
 this controller wallet (select the Masternode in the list and press "start").
 </source>
@@ -1587,8 +1587,8 @@ Are you sure?</source>
         <translation>解析的数据太大</translation>
     </message>
     <message>
-        <source>Invalid URI, not starting with "pivx" prefix</source>
-        <translation>无效的URI，不是以“ pivx”前缀开头</translation>
+        <source>Invalid URI, not starting with "groom" prefix</source>
+        <translation>无效的URI，不是以“ groom”前缀开头</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1633,7 @@ Are you sure?</source>
         <translation>如果您要禁用未经确认发送，在至少有一个确认之前&lt;br/&gt;不能更改。&lt;br/&gt;这也将影响您的余额计算。</translation>
     </message>
     <message>
-        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the GROOM client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自动打开路由器上的PIVX钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
     </message>
     <message>
@@ -1653,11 +1653,11 @@ Are you sure?</source>
         <translation>专家</translation>
     </message>
     <message>
-        <source>Automatically start PIVX after logging in to the system.</source>
+        <source>Automatically start GROOM after logging in to the system.</source>
         <translation>登录系统后自动启动PIVX。</translation>
     </message>
     <message>
-        <source>&amp;Start PIVX on system login</source>
+        <source>&amp;Start GROOM on system login</source>
         <translation>&amp;开机启动PIVX</translation>
     </message>
     <message>
@@ -1685,14 +1685,14 @@ Are you sure?</source>
         <translation>&amp;网络</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting GROOM.</source>
         <translation>可以在这里设置用户界面语言。此设置将在重新启动PIVX后生效。</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/pivx-project/pivx-project-translations</source>
+https://www.transifex.com/groom-project/groom-project-translations</source>
         <translation>语言缺失或翻译不完整?帮助贡献翻译在这里:
-https://www.transifex.com/pivx-project/pivx-project-translations</translation>
+https://www.transifex.com/groom-project/groom-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1735,7 +1735,7 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>股权分割阈值:</translation>
     </message>
     <message>
-        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <source>Connect to the GROOM network through a SOCKS5 proxy.</source>
         <translation>通过SOCKS5代理连接到PIVX网络。</translation>
     </message>
     <message>
@@ -1882,8 +1882,8 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
 <context>
     <name>PIVXGUI</name>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Core</translation>
+        <source>GROOM Core</source>
+        <translation>GROOM Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1910,8 +1910,8 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>关闭应用</translation>
     </message>
     <message>
-        <source>PIVX Core client</source>
-        <translation>PIVX Core 客户端</translation>
+        <source>GROOM Core client</source>
+        <translation>GROOM Core 客户端</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1977,11 +1977,11 @@ Address: %4
         <translation>无效支付地址%1</translation>
     </message>
     <message>
-        <source>Cannot start pivx: click-to-pay handler</source>
+        <source>Cannot start groom: click-to-pay handler</source>
         <translation>无法启动pivx:点击支付处理程序</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid GROOM address or malformed URI parameters.</source>
         <translation>URI不能被解析!这可能是由无效的PIVX地址或格式错误的URI参数造成的。</translation>
     </message>
     <message>
@@ -2067,7 +2067,7 @@ Address: %4
         <translation>金额</translation>
     </message>
     <message>
-        <source>Enter PIVX address (e.g. %1)</source>
+        <source>Enter GROOM address (e.g. %1)</source>
         <translation>输入PIVX a地址(e.g. %1)</translation>
     </message>
     <message>
@@ -2111,12 +2111,12 @@ Address: %4
         <translation>%1 毫秒</translation>
     </message>
     <message>
-        <source>A fatal error occurred. PIVX can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. GROOM can no longer continue safely and will quit.</source>
         <translation>发生了一个致命的错误。PIVX不能继续安全，将退出。</translation>
     </message>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Core</translation>
+        <source>GROOM Core</source>
+        <translation>GROOM Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -2135,7 +2135,7 @@ Address: %4
         <translation>读取主节点配置文件出错:%1</translation>
     </message>
     <message>
-        <source>PIVX Core didn't yet exit safely...</source>
+        <source>GROOM Core didn't yet exit safely...</source>
         <translation>PIVX核心尚未安全退出……</translation>
     </message>
     <message>
@@ -2318,7 +2318,7 @@ Address: %4
         <translation>区块链</translation>
     </message>
     <message>
-        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the GROOM debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>从当前数据目录打开PIVX调试日志文件。对于大型日志文件，这可能需要几秒钟。</translation>
     </message>
     <message>
@@ -2542,7 +2542,7 @@ Address: %4
         <translation>出：</translation>
     </message>
     <message>
-        <source>Welcome to the PIVX RPC console.</source>
+        <source>Welcome to the GROOM RPC console.</source>
         <translation>欢迎访问PIVX RPC控制台</translation>
     </message>
     <message>
@@ -2861,7 +2861,7 @@ Address: %4
         <translation>自定义更改地址</translation>
     </message>
     <message>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" PIVX address</source>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" GROOM address</source>
         <translation>输入值减去输出值所得的值的其余部分归为“更改”PIVX地址</translation>
     </message>
     <message>
@@ -3167,7 +3167,7 @@ These coins will no longer be cold-staked.</source>
         <translation>解密钥匙</translation>
     </message>
     <message>
-        <source>PIVX address</source>
+        <source>GROOM address</source>
         <translation>PIVX地址</translation>
     </message>
     <message>
@@ -3292,7 +3292,7 @@ Verify that you have installed a predetermined text editor.</source>
 确认您已经安装了预定的文本编辑器</translation>
     </message>
     <message>
-        <source>Welcome to the PIVX RPC console.</source>
+        <source>Welcome to the GROOM RPC console.</source>
         <translation>欢迎访问PIVX RPC控制台</translation>
     </message>
     <message>
@@ -3477,7 +3477,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>来自</translation>
     </message>
     <message>
-        <source>1) What is PIVX?</source>
+        <source>1) What is GROOM?</source>
         <translation>1）什么是PIVX?</translation>
     </message>
     <message>
@@ -3489,7 +3489,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>1</translation>
     </message>
     <message>
-        <source>What is PIVX?</source>
+        <source>What is GROOM?</source>
         <translation>PIVX是什么?</translation>
     </message>
     <message>
@@ -3503,10 +3503,10 @@ There was an error trying to save the address list to %1. Please try again.</sou
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received PIVX requires 6 confirmations on the network
+                           Newly received GROOM requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your PIVX wallet also needs to be completely synchronized
+                           Your GROOM wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -3555,7 +3555,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node PIVX core wallet with a
+                           A masternode is a computer running a full node GROOM core wallet with a
                            requirement of 10,000 PIV secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -3578,10 +3578,10 @@ There was an error trying to save the address list to %1. Please try again.</sou
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in PIVX Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in GROOM Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the PIVX network&lt;/li&gt;
+                           &lt;li&gt;Help secure the GROOM network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
@@ -3747,7 +3747,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>无法打开备份文件夹</translation>
     </message>
     <message>
-        <source>Unable to open pivx.conf with default application</source>
+        <source>Unable to open groom.conf with default application</source>
         <translation>无法使用默认应用程序打开pivx.conf</translation>
     </message>
     <message>
@@ -3798,7 +3798,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>脚本&amp;验证线程数</translation>
     </message>
     <message>
-        <source>Start PIVX on system login</source>
+        <source>Start GROOM on system login</source>
         <translation>开机启动PIVX</translation>
     </message>
     <message>
@@ -3886,7 +3886,7 @@ Are you sure?
         <translation>查看列表</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.</source>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other GROOM addresses after it matures.</source>
         <translation>成熟以后，多重花费允许您自动发送高达 100% 的股权或主节点奖励到其他PIVX地址列表</translation>
     </message>
     <message>
@@ -4005,8 +4005,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>消息 </translation>
     </message>
     <message>
-        <source>PIVX address or contact label</source>
-        <translation>PIVX 地址或者联系人标签</translation>
+        <source>GROOM address or contact label</source>
+        <translation>GROOM 地址或者联系人标签</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -4282,7 +4282,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>常见问题</translation>
     </message>
     <message>
-        <source>About PIVX</source>
+        <source>About GROOM</source>
         <translation>关于PIVX </translation>
     </message>
     <message>
@@ -4349,8 +4349,8 @@ Are you sure?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>PIVX Core is shutting down...</source>
-        <translation>PIVX 核心正在关闭...</translation>
+        <source>GROOM Core is shutting down...</source>
+        <translation>GROOM 核心正在关闭...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4379,8 +4379,8 @@ Are you sure?
         <translation>正在下载…</translation>
     </message>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Core</translation>
+        <source>GROOM Core</source>
+        <translation>GROOM Core</translation>
     </message>
 </context>
 <context>
@@ -4827,25 +4827,25 @@ backup will be created.
     </message>
     <message>
         <source>Welcome to
-PIVX Core Wallet</source>
+GROOM Core Wallet</source>
         <translation>欢迎
 PIVX核心钱包</translation>
     </message>
     <message>
-        <source>PIVX is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>GROOM is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation>PIVX是世界上最先进的隐私保护技术，由经验丰富的开发人员和密码专家开发。</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - PIVX believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - GROOM believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;正如我们的宣言所说:隐私是一项不容协商的基本人权;它赋予用户随时随地与任何人共享数据的自由——PIVX相信自我主权&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>The masternode network is PIVX's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <source>The masternode network is GROOM's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
         <translation>主节点网络是PIVX在区块链之上的第二层网络，它使我们的DAO能够提供去中心的治理。</translation>
     </message>
     <message>
-        <source>How PIVX respects your privacy?</source>
-        <translation>PIVX 到底是怎么尊重你的隐私的？</translation>
+        <source>How GROOM respects your privacy?</source>
+        <translation>GROOM 到底是怎么尊重你的隐私的？</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -4857,7 +4857,7 @@ PIVX核心钱包</translation>
     </message>
 </context>
 <context>
-    <name>pivx-core</name>
+    <name>groom-core</name>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>允许来自指定源的JSON-RPC连接。适用于&lt;ip&gt;单一IP(如1.2.3.4)、网络/网掩码(如1.2.3.4/255.255.255.0)或网络/CIDR(如1.2.3.4/24)。可以多次指定此选项</translation>
@@ -4875,7 +4875,7 @@ PIVX核心钱包</translation>
         <translation>绑定到给定地址监听JSON-RPC连接。使用[主机]: IPv6的端口符号。可以多次指定此选项(默认:绑定到所有接口)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. GROOM Core is probably already running.</source>
         <translation>无法获取数据目录%s锁。PIVX核心可能已经在运行了。</translation>
     </message>
     <message>
@@ -5023,7 +5023,7 @@ PIVX核心钱包</translation>
         <translation>网络版本字符串的总长度(%i)超过最大长度(%i)。减少任务的数量或大小。</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. PIVX Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. GROOM Core is probably already running.</source>
         <translation>无法绑定到此计算机上的%s。PIVX核心可能已经在运行了。</translation>
     </message>
     <message>
@@ -5039,8 +5039,8 @@ PIVX核心钱包</translation>
         <translation>警告:-支付tx费用设置的非常高!这是您发送交易时要支付的交易费。</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
-        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，PIVX Core将无法正常工作。</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong GROOM Core will not work properly.</source>
+        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，GROOM Core将无法正常工作。</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5111,7 +5111,7 @@ PIVX核心钱包</translation>
         <translation>版权所有(C) 2014-%i的达世核心开发者</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
+        <source>Copyright (C) 2015-%i The GROOM Core Developers</source>
         <translation>版权所有(C) 2015-%i PIVX核心开发者</translation>
     </message>
     <message>
@@ -5231,7 +5231,7 @@ PIVX核心钱包</translation>
         <translation>信息</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. PIVX Core is shutting down.</source>
+        <source>Initialization sanity check failed. GROOM Core is shutting down.</source>
         <translation>初始化完整性检查失败。PIVX核心快要关闭了。</translation>
     </message>
     <message>
@@ -5443,8 +5443,8 @@ PIVX核心钱包</translation>
         <translation>准备重新同步……</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
-        <translation>请检查您的电脑的日期和时间是否正确!如果你的时间错误，PIVX Core将无法正常工作。</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong GROOM Core will not work properly.</source>
+        <translation>请检查您的电脑的日期和时间是否正确!如果你的时间错误，GROOM Core将无法正常工作。</translation>
     </message>
     <message>
         <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
@@ -5703,7 +5703,7 @@ PIVX核心钱包</translation>
         <translation>正在验证钱包……</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
+        <source>Wallet needed to be rewritten: restart GROOM Core to complete</source>
         <translation>钱包需要重写:重新启动PIVX核心完成</translation>
     </message>
     <message>
@@ -5758,8 +5758,8 @@ PIVX核心钱包</translation>
         <translation>发送</translation>
     </message>
     <message>
-        <source>PIVX address or contact label</source>
-        <translation>PIVX 地址或者联系人标签</translation>
+        <source>GROOM address or contact label</source>
+        <translation>GROOM 地址或者联系人标签</translation>
     </message>
     <message>
         <source>Amount</source>

@@ -1,11 +1,11 @@
-// Copyright (c) 2019-2020 The PIVX developers
+// Copyright (c) 2019-2020 The GROOM developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef QTUTILS_H
 #define QTUTILS_H
 
-#include "qt/pivx/pivxgui.h"
+#include "qt/groom/pivxgui.h"
 
 #include <QAbstractAnimation>
 #include <QColor>
